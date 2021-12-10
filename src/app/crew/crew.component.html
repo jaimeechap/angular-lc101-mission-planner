@@ -10,17 +10,14 @@
          </span>
          <button (click)="remove(member)">remove</button>
       </span>
-
       <ng-template #elseBlock>
-         <!-- edit state of member -->
-         <input />
-         <button>save</button>
+        <!-- edit state of member -->
+        <input #updatedName (keyup.enter)="save(updatedName.value, member)" value="{{member.name}}"/>
+        <button (click)="save(updatedName.value, member)">save</button>
       </ng-template>
 
    </li>
 </ul>
-<ng-template #elseBlock>
-  <!-- edit state of member -->
-  <input #updatedName (keyup.enter)="save(updatedName.value, member)" value="{{member.name}}"/>
-  <button (click)="save(updatedName.value, member)">save</button>
-</ng-template>
+<input #name type="text"/>
+<label>First mission<input #firstMission type="checkbox"/></label>
+<button (click)="add(name.value, firstMission.checked)">Add</button>

@@ -14,8 +14,16 @@ export class CrewComponent implements OnInit {
   ];
 
   add(memberName: string, isFirst: boolean) {
+    let crewArray = [];
+    for (let i = 0; i < this.crew.length; i++) {
+      crewArray.push(this.crew[i]["name"])
+    }
+    if (crewArray.includes(memberName)) {
+      alert ("This name has already been used.")
+    } else {
     this.crew.push({name: memberName, firstMission: isFirst});
-  }
+    }
+  };
 
   remove(member: object) {
     let index = this.crew.indexOf(member);
