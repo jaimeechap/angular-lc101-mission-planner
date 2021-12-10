@@ -30,6 +30,7 @@ export class EquipmentComponent implements OnInit {
     equipment['newTool'] = equipment;
     this.equipmentBeingEdited = null;
     }
+    
   constructor() { }
 
   ngOnInit() {

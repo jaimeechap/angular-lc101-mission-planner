@@ -1,6 +1,6 @@
 <h3>Equipment</h3>
 <ul>
-  <li *ngFor="let tool of equipment">{{tool}}
+  <li *ngFor="let tool of equipment">
     <span *ngIf="equipmentBeingEdited !== equipment; else elseBlock">
       <!-- display state of member -->
       <span (click)="edit(equipment)" class="editable-text">{{tool}}</span>
